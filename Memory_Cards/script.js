@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       if (firstGuess === secondGuess) {
         setTimeout(matchedGuesses, 600); // Si coinciden, llama a la función para manejar la coincidencia
       } else {
-        setTimeout(resetGuesses, 600); // Si no coinciden, resetea las tarjetas
+        setTimeout(resetGuesses, 1000); // Si no coinciden, resetea las tarjetas
         errors++;
         document.getElementById("errorCount").innerText = `Number of errors: ${errors}`;
       }
