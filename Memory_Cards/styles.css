@@ -75,6 +75,7 @@
     background: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
     z-index: 10;
+    animation: zoomIn 1.0s linear;
   }
   
   .hidden {
@@ -89,3 +90,15 @@
     cursor: pointer;
     margin-top: 10px;
   }
+
+  /* Animación de zoom */
+@keyframes zoomIn {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
