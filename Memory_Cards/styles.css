@@ -1,0 +1,68 @@
+/* Estilo para el área de juego */
+.memory-game {
+    display: flex; /* Configura el display a flex para utilizar las ventajas del modelo de caja flexible */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten y envuelvan según sea necesario */
+    justify-content: space-around; /* Distribuye los elementos del juego equitativamente en el espacio disponible */
+    align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
+    margin-top: 5%; /* Margen superior del área del juego */
+    width: 400px; /* Ancho del área del juego */
+    height: 500px; /* Altura del área del juego */
+  }
+  
+  /* Estilo para cada tarjeta de memoria */
+  .memory-card {
+    margin: 10px; /* Espacio alrededor de cada tarjeta */
+    width: calc(25% - 20px); /* Ancho de la tarjeta, calculado como el 25% del ancho del área de juego menos el margen */
+    height: calc(25% - 20px); /* Altura de la tarjeta, calculada como el 25% de la altura del área de juego menos el margen */
+    perspective: 1000px; /* Configura la perspectiva para la animación 3D */
+  }
+  
+  /* Estilo para el div interno de la tarjeta, que contendrá las caras frontal y trasera */
+  .memory-card .card {
+    width: 100%; /* El div interno ocupa todo el ancho de la tarjeta */
+    height: 100%; /* El div interno ocupa toda la altura de la tarjeta */
+    position: relative; /* Configura la posición a relativa para que las caras frontal y trasera se posicionen en relación a él */
+    transform-style: preserve-3d; /* Preserva el estilo 3D para la animación de voltear la tarjeta */
+    transform: rotateY(0deg); /* Comienza con la tarjeta sin voltear */
+    transition: transform 1s; /* La animación de voltear la tarjeta dura 1 segundo */
+  }
+  
+  /* Estilo para las caras frontal y trasera de la tarjeta */
+  .memory-card .card .front-face,
+  .memory-card .card .back-face {
+    position: absolute; /* Posición absoluta para superponerlas en el mismo espacio */
+    width: 100%; /* Las caras ocupan todo el ancho del div interno de la tarjeta */
+    height: 100%; /* Las caras ocupan toda la altura del div interno de la tarjeta */
+    -webkit-backface-visibility: hidden; /* Oculta la cara de la tarjeta que está de espaldas al usuario (compatible con WebKit) */
+    backface-visibility: hidden; /* Oculta la cara de la tarjeta que está de espaldas al usuario */
+  }
+  
+  /* Estilo para la cara frontal de la tarjeta */
+  .memory-card .card .front-face {
+    background: #1F1F1F; /* Fondo negro para la cara frontal */
+    color: white; /* Texto en blanco para la cara frontal */
+  }
+  
+  /* Estilo para la cara trasera de la tarjeta */
+  .memory-card .card .back-face {
+    transform: rotateY(180deg); /* Voltea la cara trasera 180 grados para que comience oculta */
+  }
+  
+  /* Estilo para la tarjeta cuando está volteada */
+  .memory-card .card.flip {
+    transform: rotateY(180deg); /* Voltea la tarjeta 180 grados para mostrar la cara trasera */
+  }
+  
+  /* Estilo para la imagen en la cara trasera de la tarjeta */
+  .memory-card .card .back-face img {
+    width: 100%; /* La imagen ocupa todo el ancho de la cara trasera */
+    height: 100%; /* La imagen ocupa toda la altura de la cara trasera */
+    object-fit: cover; /* Ajusta la imagen para que cubra todo el espacio disponible, recortándola si es necesario */
+    /*object-fit: contain;*/
+  }
+  
+  /* Estilo para la tarjeta cuando las dos imágenes coinciden */
+  .memory-card .card.match {
+    visibility: hidden; /* Oculta la tarjeta cuando las imágenes coinciden */
+  }
+  
