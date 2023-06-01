@@ -66,3 +66,26 @@
     visibility: hidden; /* Oculta la tarjeta cuando las imágenes coinciden */
   }
   
+  #popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  #restart {
+    background-color: #1F1F1F;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
